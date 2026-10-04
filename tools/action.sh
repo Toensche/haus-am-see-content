@@ -44,23 +44,28 @@ for dir in "${ORDNER[@]}"; do
     soffice --headless --convert-to "$PDF_OPTIONEN" --outdir . karte.docx
     mv karte.pdf print.pdf
 
-    # web.pdf: Bilder auf 220 dpi, weiterhin verlustfrei (Flate) – Ziel < 1 MB
-    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.6 -dNOPAUSE -dQUIET -dBATCH \
-       -dDetectDuplicateImages=true -dCompressFonts=true \
-       -dDownsampleColorImages=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=220 -dColorImageDownsampleThreshold=1.0 \
-       -dDownsampleGrayImages=true -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=220 -dGrayImageDownsampleThreshold=1.0 \
-       -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode \
-       -dAutoFilterGrayImages=false -dGrayImageFilter=/FlateEncode \
-       -sOutputFile=web.pdf print.pdf
-
-    # Fallback, falls die verlustfreie Variante über 1 MB liegt: hochwertiges JPEG bei 220 dpi
-    if [ "$(stat -c %s web.pdf)" -gt 1000000 ]; then
-      echo "web.pdf verlustfrei zu gross ($(stat -c %s web.pdf) Bytes) – nehme JPEG-Variante"
+    # web.pdf: print.pdf ist dank Vektor-Icons und verlustfreier Kompression meist schon klein.
+    # Unter 1 MB wird es 1:1 übernommen (beste Qualität); sonst Bilder auf 220 dpi verkleinern.
+    if [ "$(stat -c %s print.pdf)" -le 1000000 ]; then
+      cp print.pdf web.pdf
+    else
       gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.6 -dNOPAUSE -dQUIET -dBATCH \
          -dDetectDuplicateImages=true -dCompressFonts=true \
          -dDownsampleColorImages=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=220 -dColorImageDownsampleThreshold=1.0 \
-         -dAutoFilterColorImages=false -dColorImageFilter=/DCTEncode -dJPEGQ=92 \
+         -dDownsampleGrayImages=true -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=220 -dGrayImageDownsampleThreshold=1.0 \
+         -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode \
+         -dAutoFilterGrayImages=false -dGrayImageFilter=/FlateEncode \
          -sOutputFile=web.pdf print.pdf
+
+      # Fallback, falls die verlustfreie Variante über 1 MB liegt: hochwertiges JPEG bei 220 dpi
+      if [ "$(stat -c %s web.pdf)" -gt 1000000 ]; then
+        echo "web.pdf verlustfrei zu gross ($(stat -c %s web.pdf) Bytes) – nehme JPEG-Variante"
+        gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.6 -dNOPAUSE -dQUIET -dBATCH \
+           -dDetectDuplicateImages=true -dCompressFonts=true \
+           -dDownsampleColorImages=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=220 -dColorImageDownsampleThreshold=1.0 \
+           -dAutoFilterColorImages=false -dColorImageFilter=/DCTEncode -dJPEGQ=92 \
+           -sOutputFile=web.pdf print.pdf
+      fi
     fi
     ls -la print.pdf web.pdf
   )
