@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "status": "aktiv",
+  "saison": "winter",
+  "kw": "07.10. bis 09.10.2026",
+  "von": "2026-10-07",
+  "bis": "2026-10-09",
+  "zeiten": "Mi–Fr 11:30–14 Uhr",
+  "ruhetage": "Montag & Dienstag Ruhetag",
+  "tage": [
+    {
+      "tag": "Mittwoch",
+      "name": "Rigatoni Rimini",
+      "beschreibung": "Herzhafte Röhrennudeln an hausgemachter Bolognesesauce mit Erbsen und Sahne, mit Parmesan verfeinert",
+      "preis": "14,90 €"
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Grillhaxe al Forno",
+      "beschreibung": "Knusprige Grillhaxe aus dem Ofen, dazu Sauerkraut und Kartoffelpüree",
+      "preis": "15,90 €"
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages an würzigem Kartoffelgratin",
+      "preis": "15,90 €"
+    }
+  ],
+  "salatHinweis": true,
+  "pauseText": null,
+  "aktualisiert": null
+}
