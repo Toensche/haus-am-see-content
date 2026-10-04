@@ -2,10 +2,18 @@
 # Kompletter Ablauf der Action "Karte erstellen". Die Workflow-Datei ruft nur dieses Skript auf,
 # damit Änderungen hier keinen Token mit Workflow-Berechtigung brauchen.
 #
-# Zu erstellen ist jede karten/<datum>/ mit karte.docx, aber ohne ergebnis.json
-# (die App löscht ergebnis.json, wenn sie eine Karte neu oder korrigiert committet).
+# Zu erstellen ist jede karten/<datum>/ mit karte.docx, deren ergebnis.json fehlt oder aus einer
+# anderen karte.docx gebaut wurde (Feld "docx" = git hash-object der Quelle).
 # Optional: $1 = bestimmter Ordner (erzwingt Neuerstellung, z. B. von Hand über "Run workflow").
 set -euo pipefail
+
+# Läufe sind per concurrency nacheinander, starten aber auf ihrem auslösenden Commit.
+# Darum zuerst auf den neuesten Stand – sonst baut ein später Lauf Veraltetes und scheitert beim Push.
+git fetch -q origin main
+git reset -q --hard origin/main
+
+# Gebaut aus genau dieser karte.docx?
+aktuell() { [ -f "$1/ergebnis.json" ] && [ "$(node -p "require('./$1/ergebnis.json').docx ?? ''")" = "$(git hash-object "$1/karte.docx")" ]; }
 
 if [ -n "${1:-}" ]; then
   ORDNER=("${1%/}")
@@ -14,7 +22,7 @@ else
   ORDNER=()
   for d in karten/*/; do
     d="${d%/}"
-    [ -f "$d/karte.docx" ] && [ ! -f "$d/ergebnis.json" ] && ORDNER+=("$d")
+    [ -f "$d/karte.docx" ] && ! aktuell "$d" && ORDNER+=("$d")
   done
 fi
 
@@ -69,7 +77,7 @@ for dir in "${ORDNER[@]}"; do
     fi
     ls -la print.pdf web.pdf
   )
-  node tools/bilder.mjs "$dir"
+  DOCX_HASH="$(git hash-object "$dir/karte.docx")" node tools/bilder.mjs "$dir"
   echo "::endgroup::"
 done
 
@@ -86,9 +94,22 @@ git add karten files img
 git commit -q -m "Karte erstellt: ${ORDNER[*]}"
 # Falls die App inzwischen etwas committet hat: einarbeiten und nochmal versuchen
 for i in 1 2 3; do
-  if git pull --rebase -q && git push -q; then break; fi
+  if git pull --rebase -q; then
+    git push -q && break
+  else
+    git rebase --abort 2>/dev/null || true
+    echo "::warning::Konflikt mit einem neueren Commit (Versuch $i)"
+  fi
   [ "$i" = 3 ] && { echo "::error::Push fehlgeschlagen"; exit 1; }
   sleep 5
 done
 
-for dir in "${ORDNER[@]}"; do node tools/mail.mjs "$dir"; done
+# Mail nur für Karten, die noch aktuell sind. Hat die App inzwischen eine Korrektur committet,
+# baut der dadurch ausgelöste nächste Lauf die Karte neu und mailt dann die richtige Fassung.
+for dir in "${ORDNER[@]}"; do
+  if aktuell "$dir"; then
+    node tools/mail.mjs "$dir"
+  else
+    echo "::notice::$dir wurde inzwischen korrigiert – Mail kommt mit dem nächsten Lauf"
+  fi
+done

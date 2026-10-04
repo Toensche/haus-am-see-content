@@ -59,6 +59,7 @@ async function main(dir) {
   const groesse = (f) => fs.statSync(path.join(dir, f)).size;
   const ergebnis = {
     status: 'fertig',
+    docx: process.env.DOCX_HASH ?? null, // aus welcher karte.docx gebaut (git hash-object)
     erstellt: new Date().toISOString(),
     seiten,
     warnungen,
