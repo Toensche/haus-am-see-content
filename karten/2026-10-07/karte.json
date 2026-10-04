@@ -9,6 +9,7 @@
       "name": "Rigatoni Rimini",
       "beschreibung": "Herzhafte Röhrennudeln an hausgemachter Bolognesesauce mit Erbsen und Sahne, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
       "preis": "14,90 €",
+      "allergenHinweise": [],
       "allergene": {
         "auswahl": [
           "gluten",
@@ -17,7 +18,14 @@
           "senf",
           "sellerie"
         ],
-        "bestaetigt": true
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
       }
     },
     {
@@ -25,13 +33,19 @@
       "name": "Grillhaxe al Forno",
       "beschreibung": "Knusprige Grillhaxe aus dem Ofen, dazu Sauerkraut und Kartoffelpüree, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €",
+      "allergenHinweise": [],
       "allergene": {
         "auswahl": [
           "milch",
           "senf",
           "sellerie"
         ],
-        "bestaetigt": true
+        "automatisch": [
+          "milch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
       }
     },
     {
@@ -39,6 +53,7 @@
       "name": "Venerdì si mangia Pesce",
       "beschreibung": "Zartes Fischfilet des Tages an würzigem Kartoffelgratin, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €",
+      "allergenHinweise": [],
       "allergene": {
         "auswahl": [
           "milch",
@@ -46,9 +61,15 @@
           "senf",
           "sellerie"
         ],
-        "bestaetigt": false
+        "automatisch": [
+          "milch",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
       }
     }
   ],
-  "erstellt": "2026-10-04T10:25:18.196Z"
+  "erstellt": "2026-10-04T10:38:01.376Z"
 }
