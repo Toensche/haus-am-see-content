@@ -38,7 +38,7 @@
       "tag": "Freitag",
       "name": "Venerdì si mangia Pesce",
       "beschreibung": "Zartes Fischfilet des Tages an würzigem Kartoffelgratin, vorweg einen marktfrischen Beilagensalat",
-      "preis": "16,90 €",
+      "preis": "15,90 €",
       "allergene": {
         "auswahl": [
           "milch",
@@ -50,5 +50,5 @@
       }
     }
   ],
-  "erstellt": "2026-10-04T10:08:41.883Z"
+  "erstellt": "2026-10-04T10:10:27.126Z"
 }
