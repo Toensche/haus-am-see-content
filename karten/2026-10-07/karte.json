@@ -8,19 +8,50 @@
       "tag": "Mittwoch",
       "name": "Rigatoni Rimini",
       "beschreibung": "Herzhafte Röhrennudeln an hausgemachter Bolognesesauce mit Erbsen und Sahne, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
-      "preis": "14,90 €"
+      "preis": "14,90 €",
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "bestaetigt": true
+      }
     },
     {
       "tag": "Donnerstag",
       "name": "Grillhaxe al Forno",
       "beschreibung": "Knusprige Grillhaxe aus dem Ofen, dazu Sauerkraut und Kartoffelpüree, vorweg einen marktfrischen Beilagensalat",
-      "preis": "15,90 €"
+      "preis": "15,90 €",
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "bestaetigt": true
+      }
     },
     {
       "tag": "Freitag",
       "name": "Venerdì si mangia Pesce",
       "beschreibung": "Zartes Fischfilet des Tages an würzigem Kartoffelgratin, vorweg einen marktfrischen Beilagensalat",
-      "preis": "15,90 €"
+      "preis": "15,90 €",
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie",
+          "fisch"
+        ],
+        "bestaetigt": true
+      }
     }
   ]
 }

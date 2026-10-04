@@ -31,7 +31,7 @@ export async function zuschneiden(seite, breite, hoehe, zielBreite) {
   }
   // sharp skaliert immer vor extend() – darum erst zwischenspeichern, dann skalieren
   return sharp(await bild.toBuffer())
-    .resize(zielBreite, Math.round((zielBreite * hoehe) / breite))
+    .resize(zielBreite, Math.round((zielBreite * hoehe) / breite), { kernel: 'lanczos3' })
     .flatten({ background: '#ffffff' });
 }
 
@@ -39,13 +39,14 @@ async function main(dir) {
   const pdf = path.join(dir, 'print.pdf');
   const seiten = Number(execFileSync('pdfinfo', [pdf], { encoding: 'utf8' }).match(/Pages:\s+(\d+)/)?.[1] ?? 0);
 
-  // 200 dpi reicht für 1080 px breite Social-Bilder und eine gut lesbare A4-Vorschau
+  // Mit 300 dpi rendern und erst danach herunterrechnen (Lanczos) – Text und Icons bleiben knackig
   const basis = path.join(dir, 'seite');
-  execFileSync('pdftoppm', ['-r', '200', '-png', '-singlefile', '-f', '1', '-l', '1', pdf, basis]);
+  execFileSync('pdftoppm', ['-r', '300', '-png', '-singlefile', '-f', '1', '-l', '1', pdf, basis]);
   const seite = fs.readFileSync(`${basis}.png`);
   fs.rmSync(`${basis}.png`);
 
-  await sharp(seite).flatten({ background: '#ffffff' }).jpeg({ quality: 85, mozjpeg: true }).toFile(path.join(dir, 'karte-a4.jpg'));
+  // Ganze Seite: 1654 px breit (200 dpi) – reicht für WhatsApp und Download
+  await sharp(seite).flatten({ background: '#ffffff' }).resize(1654, null, { kernel: 'lanczos3' }).jpeg({ quality: 88, mozjpeg: true }).toFile(path.join(dir, 'karte-a4.jpg'));
   for (const [name, b, h] of [['karte-4x5', 4, 5], ['karte-1x1', 1, 1]]) {
     const bild = await zuschneiden(seite, b, h, 1080);
     await bild.clone().png({ compressionLevel: 9 }).toFile(path.join(dir, `${name}.png`));
@@ -55,11 +56,13 @@ async function main(dir) {
   const warnungen = [];
   if (seiten !== 1) warnungen.push(`Die Karte hat ${seiten} Seiten statt einer – vermutlich sind die Texte zu lang.`);
 
+  const groesse = (f) => fs.statSync(path.join(dir, f)).size;
   const ergebnis = {
     status: 'fertig',
     erstellt: new Date().toISOString(),
     seiten,
     warnungen,
+    bytes: { 'print.pdf': groesse('print.pdf'), 'web.pdf': groesse('web.pdf') },
     dateien: fs.readdirSync(dir).filter((f) => f !== 'ergebnis.json').sort(),
   };
   fs.writeFileSync(path.join(dir, 'ergebnis.json'), JSON.stringify(ergebnis, null, 2) + '\n');
