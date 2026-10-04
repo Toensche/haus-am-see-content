@@ -116,6 +116,13 @@ for i in 1 2 3; do
   sleep 5
 done
 
+# jsDelivr hält @main bis zu 12 h im Zwischenspeicher – nach dem Veröffentlichen leeren,
+# damit Rückfall-Links (…@main/files/wochenkarte-aktuell.pdf) sofort die neue Karte liefern.
+for pfad in files/wochenkarte-aktuell.pdf data/wochenkarte.json; do
+  curl -fsS -m 20 "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${pfad}" > /dev/null \
+    && echo "jsDelivr geleert: ${pfad}" || echo "::warning::jsDelivr-Zwischenspeicher für ${pfad} nicht geleert"
+done
+
 # Mail nur für Karten, die noch aktuell sind. Hat die App inzwischen eine Korrektur committet,
 # baut der dadurch ausgelöste nächste Lauf die Karte neu und mailt dann die richtige Fassung.
 for dir in "${ORDNER[@]}"; do
