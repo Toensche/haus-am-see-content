@@ -88,9 +88,21 @@ if [ -f "$NEUESTE/web.pdf" ]; then
   for f in karte-1x1 karte-4x5 karte-a4; do cp "$NEUESTE/$f".* img/; done
 fi
 
+# Webseite (data/wochenkarte.json): nur wenn die neueste Karte in diesem Lauf gebaut wurde.
+# Sonst würde z. B. ein Neubau einer älteren Karte eine inzwischen gesetzte Sommerpause überschreiben.
+if [ -f "$NEUESTE/web.json" ] && printf '%s\n' "${ORDNER[@]}" | grep -qx "$NEUESTE"; then
+  mkdir -p data
+  node -e '
+    const fs = require("fs");
+    const w = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
+    w.aktualisiert = new Date().toISOString();
+    fs.writeFileSync("data/wochenkarte.json", JSON.stringify(w, null, 2) + "\n");
+  ' "$NEUESTE/web.json"
+fi
+
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add karten files img
+git add karten files img data
 git commit -q -m "Karte erstellt: ${ORDNER[*]}"
 # Falls die App inzwischen etwas committet hat: einarbeiten und nochmal versuchen
 for i in 1 2 3; do
