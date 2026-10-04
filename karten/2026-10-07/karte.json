@@ -27,7 +27,9 @@
       "preis": "15,90 €",
       "allergene": {
         "auswahl": [
+          "gluten",
           "milch",
+          "eier",
           "senf",
           "sellerie"
         ],
@@ -41,14 +43,16 @@
       "preis": "15,90 €",
       "allergene": {
         "auswahl": [
+          "gluten",
           "milch",
-          "fisch",
+          "eier",
           "senf",
-          "sellerie"
+          "sellerie",
+          "fisch"
         ],
-        "bestaetigt": false
+        "bestaetigt": true
       }
     }
   ],
-  "erstellt": "2026-10-04T09:46:13.708Z"
+  "erstellt": "2026-10-04T09:59:55.242Z"
 }
