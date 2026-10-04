@@ -1,5 +1,7 @@
 # Haus am See – Inhalte
 
+Wochenkarte, PDFs und Bilder für haus-am-see-restaurant.de
+
 Dieses Repo wird von der **Haus-am-See-App** befüllt. Von Hand muss hier normalerweise nichts geändert werden.
 
 ## Was hier liegt
