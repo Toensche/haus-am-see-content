@@ -1,0 +1,101 @@
+# Erzeugt aus einer befüllten Word-Karte alles Weitere:
+# print.pdf, web.pdf, Bilder (A4, 1:1, 4:5 als PNG + JPG), aktuelle Dateien mit festem Namen, Paket-Mail.
+#
+# Auslöser: die App committet karten/<datum>/karte.docx (+ karte.json).
+# Von Hand: Actions → "Karte erstellen" → Run workflow → Ordner angeben (z. B. karten/2026-10-07).
+
+name: Karte erstellen
+
+on:
+  push:
+    branches: [main]
+    paths: ['karten/*/karte.docx']
+  workflow_dispatch:
+    inputs:
+      ordner:
+        description: 'Ordner der Karte, z. B. karten/2026-10-07'
+        required: true
+
+permissions:
+  contents: write
+
+# Nie zwei Läufe gleichzeitig – sonst überschreiben sie sich die aktuellen Dateien
+concurrency:
+  group: karte-erstellen
+  cancel-in-progress: false
+
+jobs:
+  erstellen:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Karte finden
+        id: karte
+        env:
+          ORDNER: ${{ inputs.ordner }}
+        run: |
+          if [ -n "$ORDNER" ]; then
+            dir="${ORDNER%/}"
+          else
+            dir=$(git diff-tree --root --no-commit-id --name-only -r HEAD -- 'karten/*/karte.docx' | head -1 | xargs -r dirname)
+          fi
+          if [ -z "$dir" ] || [ ! -f "$dir/karte.docx" ]; then
+            echo "::error::Keine karte.docx gefunden (Ordner: '$dir')"
+            exit 1
+          fi
+          echo "dir=$dir" >> "$GITHUB_OUTPUT"
+          echo "Karte: $dir"
+
+      - name: Werkzeuge installieren
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libreoffice-writer ghostscript poppler-utils
+
+      - name: Schriften installieren
+        run: |
+          mkdir -p ~/.local/share/fonts
+          cp fonts/*.ttf ~/.local/share/fonts/
+          fc-cache -f
+          fc-list : family | grep -E 'Glegoo|Indie Flower' || { echo "::error::Schriften fehlen"; exit 1; }
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: PDFs erzeugen
+        working-directory: ${{ steps.karte.outputs.dir }}
+        run: |
+          soffice --headless --convert-to pdf --outdir . karte.docx
+          mv karte.pdf print.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook \
+             -dNOPAUSE -dQUIET -dBATCH -sOutputFile=web.pdf print.pdf
+          ls -la
+
+      - name: Bilder erzeugen
+        run: node tools/bilder.mjs "${{ steps.karte.outputs.dir }}"
+
+      - name: Aktuelle Dateien aktualisieren und committen
+        env:
+          DIR: ${{ steps.karte.outputs.dir }}
+        run: |
+          cp "$DIR/web.pdf" files/wochenkarte-aktuell.pdf
+          for f in karte-1x1 karte-4x5 karte-a4; do cp "$DIR/$f".* img/; done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DIR" files img
+          git commit -m "Karte erstellt: $DIR"
+          # Falls die App inzwischen etwas committet hat: einarbeiten und nochmal versuchen
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          echo "::error::Push fehlgeschlagen"; exit 1
+
+      - name: Paket-Mail senden
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: node tools/mail.mjs "${{ steps.karte.outputs.dir }}"

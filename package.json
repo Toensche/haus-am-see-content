@@ -1,0 +1,9 @@
+{
+  "name": "haus-am-see-content",
+  "private": true,
+  "type": "module",
+  "description": "Inhalte der Haus-am-See-Webseite: Wochenkarten, PDFs, Bilder. Wird von der App befüllt.",
+  "dependencies": {
+    "sharp": "^0.35.5"
+  }
+}
