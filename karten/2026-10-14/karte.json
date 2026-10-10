@@ -7,7 +7,7 @@
     {
       "tag": "Mittwoch",
       "name": "Pasta alla Boscaiola",
-      "beschreibung": "Herzhafte Pasta mit frischen Champignons und Schinken an feinem Tomatensahnesugo, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Herzhafte Pasta mit frischen Champignons, Schinken an feinem Tomatensahnesugo, mit Parmesan verfeinert & marktfrischem Beilagensalat vorweg",
       "preis": "14,90 €",
       "allergenHinweise": [],
       "allergene": {
@@ -73,5 +73,5 @@
       }
     }
   ],
-  "erstellt": "2026-10-10T18:58:27.765Z"
+  "erstellt": "2026-10-10T19:10:11.023Z"
 }
