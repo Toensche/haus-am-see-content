@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "status": "aktiv",
+  "saison": "winter",
+  "kw": "14.10. bis 16.10.2026",
+  "von": "2026-10-14",
+  "bis": "2026-10-16",
+  "zeiten": "Mi–Fr 11:30–14 Uhr",
+  "ruhetage": "Montag & Dienstag Ruhetag",
+  "tage": [
+    {
+      "tag": "Mittwoch",
+      "name": "Pasta alla Boscaiola",
+      "beschreibung": "Herzhafte Pasta mit frischen Champignons und Schinken an feinem Tomatensahnesugo, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €"
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Bistecca e Patate",
+      "beschreibung": "Zartes paniertes Schweineschnitzel dazu Ofenkartoffeln, mit Cherrytomaten geschmort, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages an feinem Spinat-Risotto, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    }
+  ],
+  "pauseText": null,
+  "aktualisiert": null
+}

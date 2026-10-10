@@ -1,0 +1,77 @@
+{
+  "id": "2026-10-14",
+  "dateiname": "HausAmSee_Mittagstisch_14.10.-16.10.2026",
+  "season": "winter",
+  "kw": "14.10. bis 16.10.2026",
+  "days": [
+    {
+      "tag": "Mittwoch",
+      "name": "Pasta alla Boscaiola",
+      "beschreibung": "Herzhafte Pasta mit frischen Champignons und Schinken an feinem Tomatensahnesugo, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Bistecca e Patate",
+      "beschreibung": "Zartes paniertes Schweineschnitzel dazu Ofenkartoffeln, mit Cherrytomaten geschmort, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages an feinem Spinat-Risotto, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "milch",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "milch",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    }
+  ],
+  "erstellt": "2026-10-10T18:29:02.783Z"
+}
