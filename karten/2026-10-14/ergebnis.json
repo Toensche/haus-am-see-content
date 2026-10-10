@@ -1,0 +1,23 @@
+{
+  "status": "fertig",
+  "docx": "0f333c618e4ad6a2d4db216cccf42782685971d2",
+  "erstellt": "2026-10-10T18:29:53.406Z",
+  "seiten": 1,
+  "warnungen": [],
+  "bytes": {
+    "print.pdf": 304268,
+    "web.pdf": 304268
+  },
+  "dateien": [
+    "karte-1x1.jpg",
+    "karte-1x1.png",
+    "karte-4x5.jpg",
+    "karte-4x5.png",
+    "karte-a4.jpg",
+    "karte.docx",
+    "karte.json",
+    "print.pdf",
+    "web.json",
+    "web.pdf"
+  ]
+}
