@@ -31,7 +31,7 @@
     {
       "tag": "Donnerstag",
       "name": "Bistecca e Patate",
-      "beschreibung": "Zartes paniertes Schweineschnitzel, dazu Ofenkartoffeln mit geschmorten Cherrytomaten, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Zartes paniertes Schweineschnitzel dazu Ofenkartoffeln mit geschmorten Cherrytomaten, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €",
       "allergenHinweise": [],
       "allergene": {
@@ -53,7 +53,7 @@
     {
       "tag": "Freitag",
       "name": "Venerdì si mangia Pesce",
-      "beschreibung": "Zartes Fischfilet des Tages an feinem Spinat-Risotto, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Zartes Fischfilet des Tages an feinem Spinatrisotto, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €",
       "allergenHinweise": [],
       "allergene": {
@@ -73,5 +73,5 @@
       }
     }
   ],
-  "erstellt": "2026-10-10T18:36:19.320Z"
+  "erstellt": "2026-10-10T18:58:27.765Z"
 }
