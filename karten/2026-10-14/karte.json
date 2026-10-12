@@ -31,7 +31,7 @@
     {
       "tag": "Donnerstag",
       "name": "Bistecca e Patate",
-      "beschreibung": "Zartes paniertes Schweineschnitzel dazu Ofenkartoffeln mit geschmorten Cherry-Tomaten, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Zartes paniertes Schweineschnitzel, dazu Ofenkartoffeln mit Cherrytomaten geschmort, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €",
       "allergenHinweise": [],
       "allergene": {
@@ -47,7 +47,7 @@
           "senf",
           "sellerie"
         ],
-        "manuell": false
+        "manuell": true
       }
     },
     {
@@ -73,5 +73,5 @@
       }
     }
   ],
-  "erstellt": "2026-10-12T16:44:51.697Z"
+  "erstellt": "2026-10-12T16:44:55.216Z"
 }
