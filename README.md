@@ -19,6 +19,7 @@ Dieses Repo wird von der **Haus-am-See-App** befüllt. Von Hand muss hier normal
 1. Die App committet `karten/<datum>/karte.docx` und `karte.json`.
 2. Die Action **Karte erstellen** (`.github/workflows/karte-erstellen.yml`) erzeugt PDFs und Bilder, aktualisiert `files/` und `img/` und verschickt die Paket-Mail.
 3. Dauert ca. 1–2 Minuten.
+4. `tools/pruefen.mjs` prüft das PDF auf abgeschnittenen Text (alle Gerichte vollständig, nichts unter der Schnittkante der Social-Bilder, keine festen Zeilenhöhen in der Vorlage). Funde stehen in `ergebnis.json` (`warnungen`) und in der Mail.
 
 Eine Karte neu erzeugen: *Actions → Karte erstellen → Run workflow*, Ordner angeben (z. B. `karten/2026-10-07`).
 

@@ -5,15 +5,16 @@
 //   karte-a4.jpg          ganze Seite (WhatsApp, Download)
 //   karte-4x5.png/.jpg    1080×1350 – Instagram/Facebook Hochformat
 //   karte-1x1.png/.jpg    1080×1080 – quadratisch
-//   ergebnis.json         Status für die App
+//   ergebnis.json         Status für die App (inkl. Warnungen aus tools/pruefen.mjs)
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import sharp from 'sharp';
+import { pruefeOrdner } from './pruefen.mjs';
 
 // Der Karteninhalt (Logo bis Fusszeile "Die ganze Vielfalt …") endet vor der Allergenliste,
 // die bei ca. 76 % der Seitenhöhe beginnt. Alles darunter wird für Social Media weggeschnitten.
-const INHALT_UNTEN = 0.755;
+export const INHALT_UNTEN = 0.755;
 
 /** Schneidet die A4-Seite auf das Seitenverhältnis breite:hoehe zu (Inhaltsbereich bleibt vollständig). */
 export async function zuschneiden(seite, breite, hoehe, zielBreite) {
@@ -55,6 +56,9 @@ async function main(dir) {
 
   const warnungen = [];
   if (seiten !== 1) warnungen.push(`Die Karte hat ${seiten} Seiten statt einer – vermutlich sind die Texte zu lang.`);
+  // Abgeschnittener oder zu tief laufender Text (tools/pruefen.mjs)
+  const textWarnungen = pruefeOrdner(dir);
+  warnungen.push(...textWarnungen);
 
   const groesse = (f) => fs.statSync(path.join(dir, f)).size;
   const ergebnis = {
