@@ -2,6 +2,10 @@
 # Kompletter Ablauf der Action "Karte erstellen". Die Workflow-Datei ruft nur dieses Skript auf,
 # damit Änderungen hier keinen Token mit Workflow-Berechtigung brauchen.
 #
+# Gebaut wird nur der Entwurf in karten/<datum>/ (PDFs, Bilder, ergebnis.json, Mail). Die Webseite
+# (data/wochenkarte.json, files/, img/) setzt erst „Veröffentlichen“ in der App (POST api/karte) –
+# mit festem PDF-Link auf genau den Commit, in dem diese Action das PDF abgelegt hat.
+#
 # Zu erstellen ist jede karten/<datum>/ mit karte.docx, deren ergebnis.json fehlt oder aus einer
 # anderen karte.docx gebaut wurde (Feld "docx" = git hash-object der Quelle).
 # Optional: $1 = bestimmter Ordner (erzwingt Neuerstellung, z. B. von Hand über "Run workflow").
@@ -81,28 +85,9 @@ for dir in "${ORDNER[@]}"; do
   echo "::endgroup::"
 done
 
-# Aktuelle Dateien = neueste Karte (Ordnername = erster Gerichtetag)
-NEUESTE=$(ls -d karten/*/ | sed 's:/$::' | sort | tail -1)
-if [ -f "$NEUESTE/web.pdf" ]; then
-  cp "$NEUESTE/web.pdf" files/wochenkarte-aktuell.pdf
-  for f in karte-1x1 karte-4x5 karte-a4; do cp "$NEUESTE/$f".* img/; done
-fi
-
-# Webseite (data/wochenkarte.json): nur wenn die neueste Karte in diesem Lauf gebaut wurde.
-# Sonst würde z. B. ein Neubau einer älteren Karte eine inzwischen gesetzte Sommerpause überschreiben.
-if [ -f "$NEUESTE/web.json" ] && printf '%s\n' "${ORDNER[@]}" | grep -qx "$NEUESTE"; then
-  mkdir -p data
-  node -e '
-    const fs = require("fs");
-    const w = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
-    w.aktualisiert = new Date().toISOString();
-    fs.writeFileSync("data/wochenkarte.json", JSON.stringify(w, null, 2) + "\n");
-  ' "$NEUESTE/web.json"
-fi
-
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add karten files img data
+git add karten
 git commit -q -m "Karte erstellt: ${ORDNER[*]}"
 # Falls die App inzwischen etwas committet hat: einarbeiten und nochmal versuchen
 for i in 1 2 3; do
@@ -114,13 +99,6 @@ for i in 1 2 3; do
   fi
   [ "$i" = 3 ] && { echo "::error::Push fehlgeschlagen"; exit 1; }
   sleep 5
-done
-
-# jsDelivr hält @main bis zu 12 h im Zwischenspeicher – nach dem Veröffentlichen leeren,
-# damit Rückfall-Links (…@main/files/wochenkarte-aktuell.pdf) sofort die neue Karte liefern.
-for pfad in files/wochenkarte-aktuell.pdf data/wochenkarte.json; do
-  curl -fsS -m 20 "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${pfad}" > /dev/null \
-    && echo "jsDelivr geleert: ${pfad}" || echo "::warning::jsDelivr-Zwischenspeicher für ${pfad} nicht geleert"
 done
 
 # Mail nur für Karten, die noch aktuell sind. Hat die App inzwischen eine Korrektur committet,

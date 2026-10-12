@@ -35,8 +35,8 @@ const warnung = ergebnis.warnungen.length
 
 const html = `
 <div style="font-family:Georgia,serif;color:#394C4B;font-size:16px;line-height:1.5">
-  <h2 style="color:#3B643A;margin:0 0 12px">Die Karte ist fertig 🌿</h2>
-  <p>Unser Mittagstisch vom <strong>${karte.kw}</strong> ist erstellt und auf der Webseite.</p>
+  <h2 style="color:#3B643A;margin:0 0 12px">Der Entwurf ist fertig 🌿</h2>
+  <p>Unser Mittagstisch vom <strong>${karte.kw}</strong> ist erstellt – <strong>noch nicht veröffentlicht</strong>. Auf die Webseite kommt er erst mit „Veröffentlichen“ in der App.</p>
   ${warnung}
   <p>Im Anhang:</p>
   <ul>
@@ -53,7 +53,7 @@ const res = await fetch('https://api.resend.com/emails', {
   body: JSON.stringify({
     from: MAIL_FROM,
     to: MAIL_TO.split(',').map((s) => s.trim()).filter(Boolean),
-    subject: `Mittagstisch ${karte.kw}: Karte ist fertig`,
+    subject: `Mittagstisch ${karte.kw}: Entwurf ist fertig`,
     html,
     attachments,
   }),
