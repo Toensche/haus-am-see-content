@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "status": "aktiv",
   "saison": "winter",
   "kw": "14.10. bis 16.10.2026",
@@ -17,7 +17,7 @@
     {
       "tag": "Donnerstag",
       "name": "Bistecca e Patate",
-      "beschreibung": "Zartes paniertes Schweineschnitzel, dazu Ofenkartoffeln mit Cherrytomaten geschmort, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Zartes paniertes Schweineschnitzel dazu Ofenkartoffeln mit geschmorten Cherry-Tomaten, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     },
     {
@@ -28,7 +28,7 @@
     }
   ],
   "pauseText": null,
-  "aktualisiert": "2026-10-12T16:37:33.949Z",
-  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@894457aa5da33116c04de2db4b3073991726cdf1/karten/2026-10-14/web.pdf",
-  "docx": "26ebaeb866bf5cfe2e472058e53543eadae90dc5"
+  "aktualisiert": "2026-10-12T16:53:26.423Z",
+  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@a34c1395ced7c730f7554cd4898a5def33b0ebfa/karten/2026-10-14/web.pdf",
+  "docx": "dd0ef1484ca78ed63364b28ed5c01fbc7c5945b2"
 }
