@@ -1,0 +1,78 @@
+{
+  "id": "2026-10-21",
+  "dateiname": "HausAmSee_Mittagstisch_21.10.-23.10.2026",
+  "season": "winter",
+  "kw": "21.10. bis 23.10.2026",
+  "days": [
+    {
+      "tag": "Mittwoch",
+      "name": "Tortellini Panna",
+      "beschreibung": "Herzhafte Tortellini an feiner Sahnesauce mit Schinken und Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Bistecca ai Funghi",
+      "beschreibung": "Zartes Schweineschnitzel natur an würziger Pilzrahmsauce, dazu Röstitaler, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "milch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": true
+      }
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages an knusprigem Brokkoli-Kartoffel-Auflauf, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    }
+  ],
+  "erstellt": "2026-10-16T16:28:08.501Z"
+}
