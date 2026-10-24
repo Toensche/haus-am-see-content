@@ -4,15 +4,5 @@
   "defaults": {
     "showFromDaysBefore": 7
   },
-  "exceptions": [
-    {
-      "id": "2026-10-25-geschlossen",
-      "date": "2026-10-25",
-      "open": null,
-      "label": "geschlossen",
-      "message": "Sonntag, 25.10.: Wir haben geschlossen. Ab dem 28.10. sind wir wieder für Sie da.",
-      "showFromDaysBefore": 7,
-      "theme": "herbst"
-    }
-  ]
+  "exceptions": []
 }
