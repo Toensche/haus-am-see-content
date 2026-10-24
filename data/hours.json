@@ -1,0 +1,40 @@
+{
+  "_hinweis": "Nur Ausnahmen von den regulären Öffnungszeiten. Reguläre Zeiten bleiben in Squarespace. Felder: date ODER from/to, open = [von, bis] oder null (ganzer Tag zu), label (kurz, für die Abweichend-Zeile), message (Satz für die Hinweisleiste), showFromDaysBefore (ab wann die Leiste erscheint, Standard 7).",
+  "timezone": "Europe/Berlin",
+  "defaults": {
+    "showFromDaysBefore": 7
+  },
+  "exceptions": [
+    {
+      "id": "2026-10-27-geschlossene-gesellschaft",
+      "date": "2026-10-27",
+      "open": ["17:30", "22:00"],
+      "label": "ab 17:30 Uhr geöffnet (mittags geschlossene Gesellschaft)",
+      "message": "Dienstag, 27.10.: Mittags feiert eine geschlossene Gesellschaft bei uns. Ab 17:30 Uhr sind wir wieder für alle da."
+    },
+    {
+      "id": "2026-11-02-ausnahmsweise-offen",
+      "date": "2026-11-02",
+      "open": ["11:00", "22:00"],
+      "label": "ausnahmsweise geöffnet",
+      "message": "Montag, 2.11.: Wir haben ausnahmsweise von 11 bis 22 Uhr für Sie geöffnet.",
+      "showFromDaysBefore": 10
+    },
+    {
+      "id": "2026-12-24-geschlossen",
+      "date": "2026-12-24",
+      "open": null,
+      "label": "geschlossen",
+      "message": "Heiligabend, 24.12.: Wir haben geschlossen. Ab dem 25.12. sind wir wieder für Sie da."
+    },
+    {
+      "id": "2027-01-11-betriebsferien",
+      "from": "2027-01-11",
+      "to": "2027-01-31",
+      "open": null,
+      "label": "Betriebsferien",
+      "message": "Betriebsferien vom 11. bis 31. Januar. Ab Mittwoch, 3.2., sind wir wieder für Sie da.",
+      "showFromDaysBefore": 21
+    }
+  ]
+}

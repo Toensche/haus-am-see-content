@@ -12,6 +12,8 @@ Dieses Repo wird von der **Haus-am-See-App** befüllt. Von Hand muss hier normal
 | `files/wochenkarte-aktuell.pdf` | die zuletzt veröffentlichte Karte unter festem Namen (der PDF-Knopf der Webseite nutzt ab Embed Version 5 den festen Link `pdf` aus `data/wochenkarte.json`) |
 | `img/karte-4x5.*`, `img/karte-1x1.*`, `img/karte-a4.jpg` | Bilder der zuletzt veröffentlichten Karte |
 | `data/wochenkarte.json` | veröffentlichte Karte für den Code-Block auf Squarespace (inkl. `pdf`) |
+| `data/hours.json` | Sonderöffnungszeiten (Ausnahmen) für die Hinweisleiste auf der Webseite |
+| `web/has-hours.js` | Browser-Skript, das Squarespace über jsDelivr lädt |
 | `fonts/` | Schriften der Word-Vorlage (alle unter SIL Open Font License, siehe `OFL-*.txt`) |
 
 ## Ablauf
