@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "status": "aktiv",
+  "saison": "winter",
+  "kw": "28.10. bis 30.10.2026",
+  "von": "2026-10-28",
+  "bis": "2026-10-30",
+  "zeiten": "Mi–Fr 11:30–14 Uhr",
+  "ruhetage": "Montag & Dienstag Ruhetag",
+  "tage": [
+    {
+      "tag": "Mittwoch",
+      "name": "Pasta della Nonna",
+      "beschreibung": "Herzhafte Pasta an hausgemachter Bolognese, mit Schinken und Erbsen, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €"
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Pulled Pork",
+      "beschreibung": "Zartes Pulled-Pork-Fleisch an hausgemachter Bratensauce mit Butterspätzle, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages alla Livornese, in feinem Tomaten-Sugo mit Kapern und Oliven, dazu Reis, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    }
+  ],
+  "pauseText": null,
+  "aktualisiert": null
+}

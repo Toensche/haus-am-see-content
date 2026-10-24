@@ -1,0 +1,78 @@
+{
+  "id": "2026-10-28",
+  "dateiname": "HausAmSee_Mittagstisch_28.10.-30.10.2026",
+  "season": "winter",
+  "kw": "28.10. bis 30.10.2026",
+  "days": [
+    {
+      "tag": "Mittwoch",
+      "name": "Pasta della Nonna",
+      "beschreibung": "Herzhafte Pasta an hausgemachter Bolognese, mit Schinken und Erbsen, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Pulled Pork",
+      "beschreibung": "Zartes Pulled-Pork-Fleisch an hausgemachter Bratensauce mit Butterspätzle, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages alla Livornese, in feinem Tomaten-Sugo mit Kapern und Oliven, dazu Reis, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": true
+      }
+    }
+  ],
+  "erstellt": "2026-10-24T11:10:15.946Z"
+}
