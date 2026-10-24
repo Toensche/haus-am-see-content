@@ -4,15 +4,5 @@
   "defaults": {
     "showFromDaysBefore": 7
   },
-  "exceptions": [
-    {
-      "id": "2026-12-12-geschlossen",
-      "date": "2026-12-12",
-      "open": null,
-      "label": "geschlossen",
-      "message": "Samstag, 12.12.: Wir haben geschlossen. Ab dem 13.12. sind wir wieder für Sie da.",
-      "showFromDaysBefore": 7,
-      "theme": "weihnachten"
-    }
-  ]
+  "exceptions": []
 }
