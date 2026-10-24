@@ -1,7 +1,8 @@
 /* Haus am See – Sonderöffnungszeiten
  * Liest hours.json und erzeugt daraus:
  *  1. eine Hinweisleiste unter dem Header (nur im Zeitfenster, wegklickbar)
- *  2. eine Zeile "Abweichend" in jedem Element mit data-has-hours="exceptions"
+ *  2. eine Zeile "Abweichend" am Ende jedes Textblocks, der die Öffnungszeiten enthält
+ *     (erkannt an Stichwörtern, siehe anchorTexts; optional auch in Elementen mit data-has-hours="exceptions")
  *  3. strukturierte Daten (JSON-LD) für Google
  * Reguläre Öffnungszeiten werden NICHT angefasst.
  *
@@ -19,6 +20,8 @@
     timezone: "Europe/Berlin",
     insertBefore: "#sections, main, .content-wrapper",
     appendTo: null, /* Alternative: "#header" – falls der Header die Leiste verdeckt */
+    /* Stichwörter: Textblöcke, die eines davon enthalten, bekommen die Zeile "Abweichend" angehängt */
+    anchorTexts: ["Öffnungszeiten Winterzeit", "Öffnungszeiten Sommerzeit", "Dienstag Ruhetag", "Montag Ruhetag"],
     lookaheadDays: 30,
     defaultShowFromDaysBefore: 7,
     schema: true
@@ -150,8 +153,37 @@
     else document.body.insertBefore(bar, document.body.firstChild);
   }
 
+  /* Findet die Textblöcke, die die Öffnungszeiten enthalten (per Stichwort),
+     und hängt dort am Ende einen Container an. So braucht es keinen eigenen
+     Code-Block in Squarespace, und ohne Ausnahmen entsteht kein Leerraum. */
+  function autoTargets() {
+    var found = [];
+    var seen = [];
+    var nodes = document.querySelectorAll("p, h2, h3, h4, strong");
+    nodes.forEach(function (n) {
+      var text = (n.textContent || "").replace(/\s+/g, " ");
+      var hit = CFG.anchorTexts.some(function (a) { return text.indexOf(a) !== -1; });
+      if (!hit) return;
+      var box = n.closest(".sqs-block-content") || n.closest(".sqs-block") || n.parentNode;
+      if (!box) return;
+      if (seen.some(function (s) { return s === box || s.contains(box) || box.contains(s); })) return;
+      /* Nur Blöcke, die wirklich Zeiten oder Ruhetage enthalten (keine reinen Überschriften) */
+      if (!/\d{1,2}[:.]\d{2}|Uhr|Ruhetag/.test(box.textContent || "")) return;
+      seen.push(box);
+      var t = box.querySelector('[data-has-hours="exceptions"]');
+      if (!t) {
+        t = document.createElement("div");
+        t.setAttribute("data-has-hours", "exceptions");
+        box.appendChild(t);
+      }
+      found.push(t);
+    });
+    return found;
+  }
+
   function renderExceptions(upcoming) {
-    var targets = document.querySelectorAll('[data-has-hours="exceptions"]');
+    var targets = Array.prototype.slice.call(document.querySelectorAll('[data-has-hours="exceptions"]'));
+    autoTargets().forEach(function (t) { if (targets.indexOf(t) === -1) targets.push(t); });
     if (!targets.length) return;
     targets.forEach(function (t) {
       t.innerHTML = "";
