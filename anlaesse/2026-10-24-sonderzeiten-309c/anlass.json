@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-24-sonderzeiten-309c",
+  "kachel": "sonderzeiten",
+  "dateiname": "HausAmSee_Sonderzeiten_Hinweis-Ganzer-Tag-geschlossen",
+  "eingabe": {
+    "anlass": "Hinweis: Ganzer Tag – geschlossen",
+    "zeitraum": "am Samstag, den 12.12.2026",
+    "zeiten": "geschlossen",
+    "note": "Samstag, 12.12.: Wir haben geschlossen. Ab dem 13.12. sind wir wieder für Sie da."
+  },
+  "zeilen": [
+    "Hinweis: Ganzer Tag – geschlossen",
+    "am Samstag, den 12.12.2026",
+    "geschlossen"
+  ],
+  "webText": "Am Samstag, den 12.12.2026, bleibt unser Haus am See den ganzen Tag geschlossen. Ab Sonntag, den 13.12., sind wir von 11 bis 21 Uhr wieder für Sie da, und wir freuen uns darauf, Sie bei uns am See zu begrüßen. Für Ihren Besuch empfehlen wir eine kurze Reservierung unter 📞 07576 9625839.",
+  "bild": "grafik",
+  "erstellt": "2026-10-24T17:29:08.712Z"
+}
