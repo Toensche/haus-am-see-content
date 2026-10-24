@@ -91,6 +91,8 @@
     var css = [
       ".has-hours-bar{--has-green:#3B643A;--has-graphite:#394C4B;--has-sand:#EAE5D8;--has-white:#F3F7F4;",
       "position:relative;z-index:5;background:var(--has-sand);color:var(--has-graphite);",
+      /* Squarespace setzt am Header pointer-events:none – die Leiste sitzt dort und muss klickbar bleiben (×) */
+      "pointer-events:auto;",
       "border-top:3px solid var(--has-green);font-size:16px;line-height:1.5}",
       ".has-hours-bar__inner{max-width:1200px;margin:0 auto;padding:12px 56px 12px 20px;position:relative}",
       ".has-hours-bar p{margin:0;padding:2px 0}",
