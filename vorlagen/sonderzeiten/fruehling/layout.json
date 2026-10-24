@@ -1,0 +1,9 @@
+{
+  "_hinweis": "Textzonen für die Sonderzeiten-Bilder (Pixel der jeweiligen Vorlage; zone = x, y, breite, hoehe). Die App legt vier Zeilen hinein: klein (Art), datum (gross), zeile, reservierung – zentriert, senkrecht mittig, bei Platzmangel kleiner. Schrift Fraunces (SemiBold, Bold, Regular). farbe = Textfarbe; auf hellen Flächen kein Weiss.",
+  "farbe": "#f3f7f1",
+  "formate": {
+    "feed": { "zone": { "x": 80, "y": 820, "breite": 920, "hoehe": 480 }, "schrift": { "klein": 34, "datum": 66, "zeile": 38, "reservierung": 32 } },
+    "story": { "zone": { "x": 80, "y": 1140, "breite": 920, "hoehe": 680 }, "schrift": { "klein": 46, "datum": 92, "zeile": 52, "reservierung": 40 } },
+    "titelbild": { "zone": { "x": 300, "y": 410, "breite": 1040, "hoehe": 190 }, "schrift": { "klein": 24, "datum": 46, "zeile": 28, "reservierung": 24 } }
+  }
+}

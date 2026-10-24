@@ -14,6 +14,7 @@ Dieses Repo wird von der **Haus-am-See-App** befüllt. Von Hand muss hier normal
 | `data/wochenkarte.json` | veröffentlichte Karte für den Code-Block auf Squarespace (inkl. `pdf`) |
 | `data/hours.json` | Sonderöffnungszeiten (Ausnahmen) für die Hinweisleiste auf der Webseite |
 | `web/has-hours.js` | Browser-Skript, das Squarespace über jsDelivr lädt |
+| `vorlagen/sonderzeiten/<thema>/` | Bildvorlagen der Sonderzeiten aus Canva (leer, ohne Text): `feed.png` 1080×1350, `story.png` 1080×1920, `titelbild.png` 1640×624, dazu `layout.json` (Textzonen, Schriftgrössen, Textfarbe). Die App setzt den Text ein. Neues Design: in Canva ändern, PNGs ohne Text neu exportieren und hier ersetzen – Dateinamen und Grössen gleich lassen |
 | `fonts/` | Schriften der Word-Vorlage (alle unter SIL Open Font License, siehe `OFL-*.txt`) |
 
 ## Ablauf
