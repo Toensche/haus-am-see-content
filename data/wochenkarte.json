@@ -2,33 +2,33 @@
   "version": 2,
   "status": "aktiv",
   "saison": "winter",
-  "kw": "21.10. bis 23.10.2026",
-  "von": "2026-10-21",
-  "bis": "2026-10-23",
+  "kw": "28.10. bis 30.10.2026",
+  "von": "2026-10-28",
+  "bis": "2026-10-30",
   "zeiten": "Mi–Fr 11:30–14 Uhr",
   "ruhetage": "Montag & Dienstag Ruhetag",
   "tage": [
     {
       "tag": "Mittwoch",
-      "name": "Tortellini Panna",
-      "beschreibung": "Herzhafte Tortellini an feiner Sahnesauce mit Schinken und Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "name": "Pasta della Nonna",
+      "beschreibung": "Herzhafte Pasta an hausgemachter Bolognese, mit Schinken und Erbsen, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
       "preis": "14,90 €"
     },
     {
       "tag": "Donnerstag",
-      "name": "Bistecca ai Funghi",
-      "beschreibung": "Zartes Schweineschnitzel natur an würziger Pilzrahmsauce, dazu Röstitaler, vorweg einen marktfrischen Beilagensalat",
+      "name": "Pulled Pork",
+      "beschreibung": "Zartes Pulled-Pork-Fleisch an hausgemachter Bratensauce mit Butterspätzle, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     },
     {
       "tag": "Freitag",
       "name": "Venerdì si mangia Pesce",
-      "beschreibung": "Zartes Fischfilet des Tages an knusprigem Brokkoli-Kartoffel-Auflauf, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Zartes Fischfilet des Tages alla Livornese, in feinem Tomaten-Sugo mit Kapern und Oliven, dazu Reis, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     }
   ],
   "pauseText": null,
-  "aktualisiert": "2026-10-16T16:35:54.922Z",
-  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@6f3a45175a9556121f5b1a54cd9cd81880046656/karten/2026-10-21/web.pdf",
-  "docx": "51d72aae0e27fc4af077da78f1f598b35dc1e765"
+  "aktualisiert": "2026-10-24T11:13:41.654Z",
+  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@74bff9ccea46bdcc56bb7e05a166b279da22734c/karten/2026-10-28/web.pdf",
+  "docx": "66febdae468900c71044be146e20caeeb1701733"
 }
