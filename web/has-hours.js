@@ -204,7 +204,24 @@
       });
       wrap.appendChild(ul);
       t.appendChild(wrap);
+      angleichen(t, wrap);
     });
+  }
+
+  /* Ausrichtung und Abstand wie die Absätze im Block: Squarespace setzt text-align pro Absatz
+     (Klasse sqsrte-text-align--center bzw. style), nicht auf .sqs-block-content */
+  function angleichen(t, wrap) {
+    var box = t.parentNode;
+    if (!box) return;
+    var absaetze = Array.prototype.filter.call(box.querySelectorAll("p"), function (p) { return !t.contains(p); });
+    var letzter = absaetze[absaetze.length - 1];
+    if (!letzter) return;
+    wrap.style.textAlign = getComputedStyle(letzter).textAlign;
+    var vorletzter = absaetze[absaetze.length - 2];
+    var abstand = vorletzter
+      ? letzter.getBoundingClientRect().top - vorletzter.getBoundingClientRect().bottom
+      : parseFloat(getComputedStyle(letzter).marginTop) || 0;
+    if (abstand > 0) wrap.style.marginTop = Math.round(abstand) + "px";
   }
 
   function renderSchema(upcoming) {
