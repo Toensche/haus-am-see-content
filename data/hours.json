@@ -7,12 +7,13 @@
   "exceptions": [
     {
       "id": "2026-12-12-geschlossen",
-      "date": "2026-12-12",
+      "from": "2026-12-12",
+      "to": "2026-12-13",
       "open": null,
       "label": "geschlossen",
-      "message": "Samstag, 12.12.: Wir haben geschlossen. Ab dem 13.12. sind wir wieder für Sie da.",
+      "message": "Samstag, 12.12., und Sonntag, 13.12.: Wir haben geschlossen. Ab Mittwoch, 16.12., sind wir wieder für Sie da.",
       "showFromDaysBefore": 7,
-      "theme": "winter"
+      "theme": "weihnachten"
     },
     {
       "id": "2026-12-13-geschlossen",
