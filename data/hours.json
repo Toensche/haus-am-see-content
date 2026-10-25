@@ -6,6 +6,18 @@
   },
   "exceptions": [
     {
+      "id": "2026-12-05-ausnahmsweise-offen",
+      "date": "2026-12-05",
+      "open": [
+        "11:00",
+        "22:00"
+      ],
+      "label": "ausnahmsweise geöffnet, 11 bis 22 Uhr",
+      "message": "Samstag, 5.12.: Wir haben ausnahmsweise von 11 bis 22 Uhr für Sie geöffnet.",
+      "showFromDaysBefore": 10,
+      "theme": "weihnachten"
+    },
+    {
       "id": "2026-12-12-geschlossen",
       "date": "2026-12-12",
       "open": null,
