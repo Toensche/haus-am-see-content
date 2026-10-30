@@ -2,33 +2,33 @@
   "version": 2,
   "status": "aktiv",
   "saison": "winter",
-  "kw": "28.10. bis 30.10.2026",
-  "von": "2026-10-28",
-  "bis": "2026-10-30",
+  "kw": "04.11. bis 06.11.2026",
+  "von": "2026-11-04",
+  "bis": "2026-11-06",
   "zeiten": "Mi–Fr 11:30–14 Uhr",
   "ruhetage": "Montag & Dienstag Ruhetag",
   "tage": [
     {
       "tag": "Mittwoch",
-      "name": "Pasta della Nonna",
-      "beschreibung": "Herzhafte Pasta an hausgemachter Bolognese, mit Schinken und Erbsen, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "name": "Mezze Maniche Caprese",
+      "beschreibung": "Herzhafte Röhrchennudeln in unserem Tomatensugo della Mamma mit feiner Burrata on top, vorweg einen marktfrischen Beilagensalat",
       "preis": "14,90 €"
     },
     {
       "tag": "Donnerstag",
-      "name": "Pulled Pork",
-      "beschreibung": "Zartes Pulled-Pork-Fleisch an hausgemachter Bratensauce mit Butterspätzle, vorweg einen marktfrischen Beilagensalat",
+      "name": "Schweinegulasch",
+      "beschreibung": "Würziger Schweinegulasch nach Art des Hauses, dazu Butterspätzle, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     },
     {
       "tag": "Freitag",
       "name": "Venerdì si mangia Pesce",
-      "beschreibung": "Zartes Fischfilet des Tages alla Livornese, in feinem Tomaten-Sugo mit Kapern und Oliven, dazu Reis, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Zartes Fischfilet des Tages an feinem Graupen-Risotto-Gemüse mit Currysauce, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     }
   ],
   "pauseText": null,
-  "aktualisiert": "2026-10-24T11:13:41.654Z",
-  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@74bff9ccea46bdcc56bb7e05a166b279da22734c/karten/2026-10-28/web.pdf",
-  "docx": "66febdae468900c71044be146e20caeeb1701733"
+  "aktualisiert": "2026-10-30T14:09:05.441Z",
+  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@329eb0280d7252c7db8d79679e85d9c2c952d93d/karten/2026-11-04/web.pdf",
+  "docx": "03af7a46e7184f418cf388699ca5bf243eb6d304"
 }
