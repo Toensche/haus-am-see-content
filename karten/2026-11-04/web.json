@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "status": "aktiv",
+  "saison": "winter",
+  "kw": "04.11. bis 06.11.2026",
+  "von": "2026-11-04",
+  "bis": "2026-11-06",
+  "zeiten": "Mi–Fr 11:30–14 Uhr",
+  "ruhetage": "Montag & Dienstag Ruhetag",
+  "tage": [
+    {
+      "tag": "Mittwoch",
+      "name": "Mezze Maniche Caprese",
+      "beschreibung": "Herzhafte Röhrchennudeln in unserem Tomatensugo della Mamma mit feiner Burrata on top, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €"
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Schweinegulasch",
+      "beschreibung": "Würziger Schweinegulasch nach Art des Hauses, dazu Butterspätzle, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages an feinem Graupen-Risotto-Gemüse mit Currysauce, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    }
+  ],
+  "pauseText": null,
+  "aktualisiert": null
+}

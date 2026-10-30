@@ -1,0 +1,81 @@
+{
+  "id": "2026-11-04",
+  "dateiname": "HausAmSee_Mittagstisch_04.11.-06.11.2026",
+  "season": "winter",
+  "kw": "04.11. bis 06.11.2026",
+  "days": [
+    {
+      "tag": "Mittwoch",
+      "name": "Mezze Maniche Caprese",
+      "beschreibung": "Herzhafte Röhrchennudeln in unserem Tomatensugo della Mamma mit feiner Burrata on top, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Schweinegulasch",
+      "beschreibung": "Würziger Schweinegulasch nach Art des Hauses, dazu Butterspätzle, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages an feinem Graupen-Risotto-Gemüse mit Currysauce, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    }
+  ],
+  "erstellt": "2026-10-30T14:07:57.705Z"
+}
