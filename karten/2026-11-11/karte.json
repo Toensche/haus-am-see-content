@@ -1,0 +1,79 @@
+{
+  "id": "2026-11-11",
+  "dateiname": "HausAmSee_Mittagstisch_11.11.-13.11.2026",
+  "season": "winter",
+  "kw": "11.11. bis 13.11.2026",
+  "days": [
+    {
+      "tag": "Mittwoch",
+      "name": "Pasta con Salsiccia",
+      "beschreibung": "Herzhafte Pasta mit pikanter Salsiccia in unserem Tomatensahnesugo, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Putenschnitzel paniert",
+      "beschreibung": "Zartes Putenschnitzel, paniert, mit buntem Gemüse und Röstitalern, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Seelachsfilet, paniert, an feinem Kartoffelsalat und Remouladensauce, vorweg eine kleine Tomaten-Bruschetta",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "eier",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "eier",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    }
+  ],
+  "erstellt": "2026-11-07T11:37:49.536Z"
+}
