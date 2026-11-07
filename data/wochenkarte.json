@@ -2,33 +2,33 @@
   "version": 2,
   "status": "aktiv",
   "saison": "winter",
-  "kw": "04.11. bis 06.11.2026",
-  "von": "2026-11-04",
-  "bis": "2026-11-06",
+  "kw": "11.11. bis 13.11.2026",
+  "von": "2026-11-11",
+  "bis": "2026-11-13",
   "zeiten": "Mi–Fr 11:30–14 Uhr",
   "ruhetage": "Montag & Dienstag Ruhetag",
   "tage": [
     {
       "tag": "Mittwoch",
-      "name": "Mezze Maniche Caprese",
-      "beschreibung": "Herzhafte Röhrchennudeln in unserem Tomatensugo della Mamma mit feiner Burrata on top, vorweg einen marktfrischen Beilagensalat",
+      "name": "Pasta con Salsiccia",
+      "beschreibung": "Herzhafte Pasta mit pikanter Salsiccia in unserem Tomatensahnesugo, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
       "preis": "14,90 €"
     },
     {
       "tag": "Donnerstag",
-      "name": "Schweinegulasch",
-      "beschreibung": "Würziger Schweinegulasch nach Art des Hauses, dazu Butterspätzle, vorweg einen marktfrischen Beilagensalat",
+      "name": "Putenschnitzel paniert",
+      "beschreibung": "Zartes Putenschnitzel, paniert, mit buntem Gemüse und Röstitalern, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     },
     {
       "tag": "Freitag",
       "name": "Venerdì si mangia Pesce",
-      "beschreibung": "Zartes Fischfilet des Tages an feinem Graupen-Risotto-Gemüse mit Currysauce, vorweg einen marktfrischen Beilagensalat",
+      "beschreibung": "Zartes Seelachsfilet, paniert, an feinem Kartoffelsalat und Remouladensauce, vorweg eine kleine Tomaten-Bruschetta",
       "preis": "15,90 €"
     }
   ],
   "pauseText": null,
-  "aktualisiert": "2026-10-30T14:09:05.441Z",
-  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@329eb0280d7252c7db8d79679e85d9c2c952d93d/karten/2026-11-04/web.pdf",
-  "docx": "03af7a46e7184f418cf388699ca5bf243eb6d304"
+  "aktualisiert": "2026-11-07T11:39:03.914Z",
+  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@b8f70c5da8c85cbf602219c825e17ff64b0bc5d3/karten/2026-11-11/web.pdf",
+  "docx": "c4559df9412ac14bb2f838ab6fcaca63af13a8b0"
 }
