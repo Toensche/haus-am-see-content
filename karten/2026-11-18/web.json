@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "status": "aktiv",
+  "saison": "winter",
+  "kw": "18.11. bis 20.11.2026",
+  "von": "2026-11-18",
+  "bis": "2026-11-20",
+  "zeiten": "Mi–Fr 11:30–14 Uhr",
+  "ruhetage": "Montag & Dienstag Ruhetag",
+  "tage": [
+    {
+      "tag": "Mittwoch",
+      "name": "Tortellini ai Spinaci",
+      "beschreibung": "Herzhafte Tortellini an feiner Sahnesauce mit Spinat, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €"
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Schnitzel mit Pommes",
+      "beschreibung": "Zartes paniertes Schweineschnitzel mit Pommes, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages, dazu Blumenkohlröschen und Kroketten an feiner Meerrettichsauce, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €"
+    }
+  ],
+  "pauseText": null,
+  "aktualisiert": null
+}

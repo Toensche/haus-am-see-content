@@ -1,0 +1,81 @@
+{
+  "id": "2026-11-18",
+  "dateiname": "HausAmSee_Mittagstisch_18.11.-20.11.2026",
+  "season": "winter",
+  "kw": "18.11. bis 20.11.2026",
+  "days": [
+    {
+      "tag": "Mittwoch",
+      "name": "Tortellini ai Spinaci",
+      "beschreibung": "Herzhafte Tortellini an feiner Sahnesauce mit Spinat, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "preis": "14,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Donnerstag",
+      "name": "Schnitzel mit Pommes",
+      "beschreibung": "Zartes paniertes Schweineschnitzel mit Pommes, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "eier",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    },
+    {
+      "tag": "Freitag",
+      "name": "Venerdì si mangia Pesce",
+      "beschreibung": "Zartes Fischfilet des Tages, dazu Blumenkohlröschen und Kroketten an feiner Meerrettichsauce, vorweg einen marktfrischen Beilagensalat",
+      "preis": "15,90 €",
+      "allergenHinweise": [],
+      "allergene": {
+        "auswahl": [
+          "gluten",
+          "milch",
+          "eier",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "automatisch": [
+          "gluten",
+          "milch",
+          "eier",
+          "fisch",
+          "senf",
+          "sellerie"
+        ],
+        "manuell": false
+      }
+    }
+  ],
+  "erstellt": "2026-11-15T09:42:32.778Z"
+}
