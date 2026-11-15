@@ -2,33 +2,33 @@
   "version": 2,
   "status": "aktiv",
   "saison": "winter",
-  "kw": "11.11. bis 13.11.2026",
-  "von": "2026-11-11",
-  "bis": "2026-11-13",
+  "kw": "18.11. bis 20.11.2026",
+  "von": "2026-11-18",
+  "bis": "2026-11-20",
   "zeiten": "Mi–Fr 11:30–14 Uhr",
   "ruhetage": "Montag & Dienstag Ruhetag",
   "tage": [
     {
       "tag": "Mittwoch",
-      "name": "Pasta con Salsiccia",
-      "beschreibung": "Herzhafte Pasta mit pikanter Salsiccia in unserem Tomatensahnesugo, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
+      "name": "Tortellini ai Spinaci",
+      "beschreibung": "Herzhafte Tortellini an feiner Sahnesauce mit Spinat, mit Parmesan verfeinert, vorweg einen marktfrischen Beilagensalat",
       "preis": "14,90 €"
     },
     {
       "tag": "Donnerstag",
-      "name": "Putenschnitzel paniert",
-      "beschreibung": "Zartes Putenschnitzel, paniert, mit buntem Gemüse und Röstitalern, vorweg einen marktfrischen Beilagensalat",
+      "name": "Schnitzel mit Pommes",
+      "beschreibung": "Zartes paniertes Schweineschnitzel mit Pommes, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     },
     {
       "tag": "Freitag",
       "name": "Venerdì si mangia Pesce",
-      "beschreibung": "Zartes Seelachsfilet, paniert, an feinem Kartoffelsalat und Remouladensauce, vorweg eine kleine Tomaten-Bruschetta",
+      "beschreibung": "Zartes Fischfilet des Tages, dazu Blumenkohlröschen und Kroketten an feiner Meerrettichsauce, vorweg einen marktfrischen Beilagensalat",
       "preis": "15,90 €"
     }
   ],
   "pauseText": null,
-  "aktualisiert": "2026-11-07T11:39:03.914Z",
-  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@b8f70c5da8c85cbf602219c825e17ff64b0bc5d3/karten/2026-11-11/web.pdf",
-  "docx": "c4559df9412ac14bb2f838ab6fcaca63af13a8b0"
+  "aktualisiert": "2026-11-15T09:44:10.889Z",
+  "pdf": "https://cdn.jsdelivr.net/gh/Toensche/haus-am-see-content@f941b27854e9684aad5b6f39114b36bedbfd12dc/karten/2026-11-18/web.pdf",
+  "docx": "14be152bec740c4a8102e6642bc0b82d1bf0007c"
 }
